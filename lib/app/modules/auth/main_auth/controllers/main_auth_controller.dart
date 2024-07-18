@@ -1,23 +1,10 @@
 import 'package:get/get.dart';
 
 class MainAuthController extends GetxController {
-  //TODO: Implement MainAuthController
+  static MainAuthController get instance => Get.find();
+  RxBool isSignIn = true.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  onToggle() {
+    isSignIn.value = !isSignIn.value;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
