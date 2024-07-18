@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "224365014575",
+    "project_id": "check-me-in-ass",
+    "storage_bucket": "check-me-in-ass.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224365014575:android:27fa407feebd5b2cb9a0da",
+        "android_client_info": {
+          "package_name": "com.diseirang.check_me_in"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwg0Vi18D3goOqSSpFbhJj1GO56xe4Kno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
