@@ -62,12 +62,12 @@ flutter {
 
 
 // fix kotlin version
-configurations.all {
-    resolutionStrategy {
-        eachDependency {
-            if ((requested.group == "org.jetbrains.kotlin") && (requested.name.startsWith("kotlin-stdlib"))) {
-                useVersion("1.8.0")
-            }
-        }
-    }
-}
+// configurations.all {
+//     resolutionStrategy {
+//         eachDependency {
+//             if ((requested.group == "org.jetbrains.kotlin") && (requested.name.startsWith("kotlin-stdlib"))) {
+//                 useVersion("1.8.0")
+//             }
+//         }
+//     }
+// }
