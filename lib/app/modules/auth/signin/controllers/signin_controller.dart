@@ -1,23 +1,22 @@
+import 'package:check_me_in/app/modules/auth/main_auth/controllers/main_auth_controller.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SigninController extends GetxController {
-  //TODO: Implement SigninController
+  static SigninController get instance => Get.find();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final mainAuthController = Get.put(MainAuthController());
+// sign in user with google
+  void signInWithGoogle() {
+    try {
+      mainAuthController.signInWithGoogle();
+      Get.dialog(
+        const Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    } catch (e) {
+      Get.snackbar('Error has occurred!', e.toString());
+    }
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

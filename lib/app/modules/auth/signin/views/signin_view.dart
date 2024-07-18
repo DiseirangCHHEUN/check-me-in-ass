@@ -62,7 +62,8 @@ class SigninView extends GetView<SigninController> {
                     children: [
                       Expanded(
                         child:
-                            AuthButton(onPress: () {}, buttonText: 'sign in'),
+                            AuthButton(onPress: () {
+                            }, buttonText: 'sign in'),
                       ),
                     ],
                   ),

@@ -1,8 +1,10 @@
+import 'package:check_me_in/app/modules/auth/signin/controllers/signin_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../constants/color_manager.dart';
 
 class AuthFooter extends StatelessWidget {
-  const AuthFooter(
+  AuthFooter(
       {super.key,
       required this.btnSignText,
       required this.signText,
@@ -10,6 +12,8 @@ class AuthFooter extends StatelessWidget {
 
   final String signText, btnSignText;
   final Function()? onPressed;
+
+  final controller = Get.put(SigninController());
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +45,9 @@ class AuthFooter extends StatelessWidget {
                   // backgroundColor:
                   //     controller.isLoading.value ? Colors.grey : ColorManager().bgColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  controller.signInWithGoogle();
+                },
                 child: Text(
                   'sign in with google'.toUpperCase(),
                   style: const TextStyle(
