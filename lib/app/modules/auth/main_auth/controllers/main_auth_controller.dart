@@ -7,11 +7,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class MainAuthController extends GetxController {
   static MainAuthController get instance => Get.find();
-  RxBool isSignIn = true.obs;
+  // RxBool isSignIn = true.obs;
 
-  onToggle() {
-    isSignIn.value = !isSignIn.value;
-  }
+  // onToggle() {
+  //   isSignIn.value = !isSignIn.value;
+  // }
 
   // declare variable
   final _auth = FirebaseAuth.instance;
@@ -34,7 +34,7 @@ class MainAuthController extends GetxController {
     user == null
         ? Get.offAll(() => const MainAuthView())
         : {
-            Get.offAll(() => HomeView()),
+            Get.offAll(() => const HomeView()),
             // profileController.fetchUserProfile(),
           };
   }
