@@ -6,7 +6,7 @@ import '../../../routes/app_pages.dart';
 import '../exceptions/authentication_failure.dart';
 
 class AuthRepository extends GetxController {
-  // static AuthRepository get instance => Get.put(AuthRepository());
+  static AuthRepository get instance => Get.put(AuthRepository());
 
   final _firebaseAuth = FirebaseAuth.instance;
   final _googleSignIn = GoogleSignIn();
@@ -26,7 +26,7 @@ class AuthRepository extends GetxController {
 
   _setInitialScreen(User? user) {
     user == null
-        ? Get.offAllNamed(Routes.MAIN_AUTH)
+        ? Get.offAllNamed(Routes.SIGNIN)
         : {
             Get.offAllNamed(Routes.DASHBOARD),
             // profileController.fetchUserProfile(),
@@ -94,7 +94,6 @@ class AuthRepository extends GetxController {
     try {
       isLoading(true);
       await _firebaseAuth.signOut();
-      await _googleSignIn.signIn();
       isLoading(false);
     } on FirebaseAuthException catch (e) {
       final ex = AuthenticationFailure.code(e.code);

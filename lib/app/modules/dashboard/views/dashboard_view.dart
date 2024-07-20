@@ -12,7 +12,7 @@ class DashboardView extends GetView<DashboardController> {
         actions: [
           IconButton(
               onPressed: () {
-                AuthRepository().signOut();
+                AuthRepository.instance.signOut();
               },
               icon: const Icon(Icons.logout_rounded))
         ],
