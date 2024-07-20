@@ -25,7 +25,7 @@ class AuthenticationFailure {
             'This user has been disabled. Please contact support.');
       case 'invalid-credential':
         return const AuthenticationFailure(
-            'Invalid credential', 'The email and password is not valid.');
+            'Invalid credential', 'The email or password is not valid.');
       default:
         return const AuthenticationFailure();
     }

@@ -1,11 +1,9 @@
-// ignore_for_file: constant_identifier_names
-
-import 'package:check_me_in/app/modules/auth/signin/bindings/signin_binding.dart';
-import 'package:check_me_in/app/modules/auth/signin/views/signin_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/ask_permission/bindings/ask_permission_binding.dart';
 import '../modules/ask_permission/views/ask_permission_view.dart';
+import '../modules/auth/signin/bindings/signin_binding.dart';
+import '../modules/auth/signin/views/signin_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -14,6 +12,10 @@ import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/report/bindings/report_binding.dart';
 import '../modules/report/views/report_view.dart';
+import '../modules/setting/bindings/setting_binding.dart';
+import '../modules/setting/views/setting_view.dart';
+
+// ignore_for_file: constant_identifier_names
 
 part 'app_routes.dart';
 
@@ -31,7 +33,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DASHBOARD,
-      page: () => DashboardView(),
+      page: () => const DashboardView(),
       binding: DashboardBinding(),
     ),
     GetPage(
@@ -51,8 +53,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SIGNIN,
-      page: () => SigninView(),
+      page: () => const SigninView(),
       binding: SigninBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTING,
+      page: () => const SettingView(),
+      binding: SettingBinding(),
     ),
   ];
 }

@@ -11,6 +11,7 @@ abstract class Routes {
   static const ASK_PERMISSION = _Paths.ASK_PERMISSION;
   static const PROFILE = _Paths.PROFILE;
   static const REPORT = _Paths.REPORT;
+  static const SETTING = _Paths.SETTING;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const ASK_PERMISSION = '/ask-permission';
   static const PROFILE = '/profile';
   static const REPORT = '/report';
+  static const SETTING = '/setting';
 }

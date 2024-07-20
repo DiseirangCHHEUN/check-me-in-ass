@@ -1,5 +1,7 @@
 import 'package:check_me_in/app/constants/color_manager.dart';
+import 'package:check_me_in/app/modules/auth/signin/controllers/signin_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AuthButton extends StatelessWidget {
   const AuthButton({
@@ -12,7 +14,7 @@ class AuthButton extends StatelessWidget {
   final String buttonText;
   @override
   Widget build(BuildContext context) {
-    // final controller = Get.put(AuthRepository());
+    final controller = Get.put(SigninController());
 
     return FilledButton(
       onPressed: onPress,
@@ -25,47 +27,47 @@ class AuthButton extends StatelessWidget {
         // backgroundColor:
         //     controller.isLoading.value ? Colors.grey : ColorManager().bgColor,
       ),
-      child: Text(
-        buttonText.toUpperCase(),
-        style: const TextStyle(
-          fontSize: 18.0,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      // child: Obx(
-      //   () {
-      //     if (controller.isLoading.value) {
-      //       return const Row(
-      //         mainAxisAlignment: MainAxisAlignment.center,
-      //         children: [
-      //           Text(
-      //             'Loading... ',
-      //             style: TextStyle(
-      //               fontSize: 18.0,
-      //               fontWeight: FontWeight.bold,
-      //             ),
-      //           ),
-      //           SizedBox(
-      //             height: 20,
-      //             width: 20,
-      //             child: CircularProgressIndicator(
-      //               color: Colors.white,
-      //               strokeWidth: 2,
-      //             ),
-      //           ),
-      //         ],
-      //       );
-      //     } else {
-      //       return Text(
-      //         buttonText.toUpperCase(),
-      //         style: const TextStyle(
-      //           fontSize: 18.0,
-      //           fontWeight: FontWeight.bold,
-      //         ),
-      //       );
-      //     }
-      //   },
+      // child: Text(
+      //   buttonText.toUpperCase(),
+      //   style: const TextStyle(
+      //     fontSize: 18.0,
+      //     fontWeight: FontWeight.bold,
+      //   ),
       // ),
+      child: Obx(
+        () {
+          if (controller.isLoading.value) {
+            return const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Loading... ',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                  width: 20,
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                    strokeWidth: 2,
+                  ),
+                ),
+              ],
+            );
+          } else {
+            return Text(
+              buttonText.toUpperCase(),
+              style: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }

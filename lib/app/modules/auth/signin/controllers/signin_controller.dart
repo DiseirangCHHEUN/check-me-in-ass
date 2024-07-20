@@ -1,5 +1,4 @@
 import 'package:check_me_in/app/modules/auth/exceptions/authentication_failure.dart';
-import 'package:check_me_in/app/routes/app_pages.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,19 +13,25 @@ class SigninController extends GetxController {
   final TextEditingController passwordController =
       TextEditingController(text: 'dev123456');
 
+  RxBool isLoading = false.obs;
+
   void loginUser() async {
     var email = emailController.text;
     var password = passwordController.text;
     try {
+      isLoading(true);
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      Get.offAllNamed(Routes.DASHBOARD);
+      Get.snackbar('Successful!', 'Sign in successfully.');
+      isLoading(false);
     } on FirebaseAuthException catch (e) {
       final ex = AuthenticationFailure.code(e.code);
       Get.snackbar(ex.title, ex.msg);
+      isLoading(false);
     } catch (_) {
       const ex = AuthenticationFailure();
       Get.snackbar(ex.title, ex.msg);
+      isLoading(false);
     }
   }
 }
