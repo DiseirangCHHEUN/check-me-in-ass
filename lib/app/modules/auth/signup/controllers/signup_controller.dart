@@ -1,23 +1,25 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignupController extends GetxController {
-  //TODO: Implement SignupController
+  static SignupController get instance => Get.find();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  final formKey = GlobalKey<FormState>();
+  RxBool isLoading = false.obs;
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final TextEditingController fullNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
-  void onClose() {
-    super.onClose();
-  }
+  void dispose() {
+    fullNameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
 
-  void increment() => count.value++;
+    super.dispose();
+  }
 }

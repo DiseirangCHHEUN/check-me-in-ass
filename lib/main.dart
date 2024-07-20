@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:check_me_in/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
 
@@ -10,6 +11,19 @@ Future<void> main() async {
 
   // initialize firebase app
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+  //     .then(
+  //   (value) => Get.put(AuthRepository()),
+  // );
+
+  // avoid screen rotation
+  SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
+  );
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
