@@ -1,11 +1,11 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:check_me_in/app/modules/auth/signin/bindings/signin_binding.dart';
+import 'package:check_me_in/app/modules/auth/signin/views/signin_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/ask_permission/bindings/ask_permission_binding.dart';
 import '../modules/ask_permission/views/ask_permission_view.dart';
-import '../modules/auth/main_auth/bindings/main_auth_binding.dart';
-import '../modules/auth/main_auth/views/main_auth_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -21,18 +21,13 @@ class AppPages {
   AppPages._();
 
   // static const INITIAL = Routes.HOME;
-  static const INITIAL = Routes.MAIN_AUTH;
+  static const INITIAL = Routes.SIGNIN;
 
   static final routes = [
     GetPage(
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.MAIN_AUTH,
-      page: () => const MainAuthView(),
-      binding: MainAuthBinding(),
     ),
     GetPage(
       name: _Paths.DASHBOARD,
@@ -53,6 +48,11 @@ class AppPages {
       name: _Paths.REPORT,
       page: () => const ReportView(),
       binding: ReportBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNIN,
+      page: () => SigninView(),
+      binding: SigninBinding(),
     ),
   ];
 }
