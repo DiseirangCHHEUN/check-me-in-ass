@@ -81,7 +81,7 @@ class BodyItem extends StatelessWidget {
                                 ),
                                 onPressed: () {},
                                 child: Text(
-                                  'Check In',
+                                  ' Check In ',
                                   style: GoogleFonts.anton(
                                     fontSize: 18,
                                   ),
@@ -96,7 +96,7 @@ class BodyItem extends StatelessWidget {
                                 ),
                                 onPressed: () {},
                                 child: Text(
-                                  'Check Out',
+                                  ' Check Out ',
                                   style: GoogleFonts.anton(
                                     fontSize: 18,
                                   ),
