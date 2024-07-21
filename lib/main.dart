@@ -26,6 +26,7 @@ Future<void> main() async {
   runApp(
     GetMaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xFFDCEFFF),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFFFFD147),
           foregroundColor: Colors.white,

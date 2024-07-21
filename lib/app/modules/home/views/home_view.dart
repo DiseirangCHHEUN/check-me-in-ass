@@ -1,3 +1,5 @@
+import 'package:check_me_in/app/modules/home/utils/body_item_button.dart';
+import 'package:check_me_in/app/modules/home/utils/body_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,13 +12,6 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {
-                AuthRepository.instance.signOut();
-              },
-              icon: const Icon(Icons.logout_rounded))
-        ],
         title: Row(
           children: [
             ClipRRect(
@@ -29,105 +24,62 @@ class HomeView extends GetView<HomeController> {
             ),
           ],
         ),
-      ),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            BodyItem(),
-            BodyItem(),
-            BodyItem(),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class BodyItem extends StatelessWidget {
-  const BodyItem({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Column(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Card(
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: const Color(0xFFFFF3C5),
+        actions: [
+          IconButton(
+            onPressed: () {
+              AuthRepository.instance.signOut();
+            },
+            icon: Row(
+              children: [
+                Text(
+                  'Logout ',
+                  style: GoogleFonts.anton(color: Colors.white),
                 ),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20),
-                    Wrap(
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: FilledButton.tonal(
-                                style: FilledButton.styleFrom(
-                                  backgroundColor: Colors.green,
-                                  foregroundColor: Colors.white,
-                                ),
-                                onPressed: () {},
-                                child: Text(
-                                  ' Check In ',
-                                  style: GoogleFonts.anton(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: FilledButton.tonal(
-                                style: FilledButton.styleFrom(
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: Colors.redAccent,
-                                ),
-                                onPressed: () {},
-                                child: Text(
-                                  ' Check Out ',
-                                  style: GoogleFonts.anton(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        Positioned(
-          left: 10,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-            ),
-            child: Text(
-              '  Foods break!  ',
-              style: GoogleFonts.anton(color: Colors.amber),
+                const Icon(Icons.logout_rounded),
+              ],
             ),
           ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset('assets/app_icons/152.png'),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Check Me In - Mobile',
+              style: GoogleFonts.anton(fontSize: 22),
+            ),
+            const SizedBox(height: 20),
+            BodyItemCard(
+              itemTitle: '  Working!  ',
+              onCheckIn: () {},
+              onCheckOut: () {},
+            ),
+            const SizedBox(height: 16),
+            BodyItemCard(
+              itemTitle: '  Foods break!  ',
+              onCheckIn: () {},
+              onCheckOut: () {},
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                BodyItemButton(
+                  bgColor: const Color(0xFFFFF178),
+                  fgColor: Colors.white,
+                  title: "Ask Permission",
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
