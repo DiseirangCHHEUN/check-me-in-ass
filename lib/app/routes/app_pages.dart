@@ -14,6 +14,8 @@ import '../modules/report/bindings/report_binding.dart';
 import '../modules/report/views/report_view.dart';
 import '../modules/setting/bindings/setting_binding.dart';
 import '../modules/setting/views/setting_view.dart';
+import '../modules/waiting/bindings/waiting_binding.dart';
+import '../modules/waiting/views/waiting_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -23,7 +25,7 @@ class AppPages {
   AppPages._();
 
   // static const INITIAL = Routes.HOME;
-  static const INITIAL = Routes.DASHBOARD;
+  static const INITIAL = Routes.WAITING;
 
   static final routes = [
     GetPage(
@@ -60,6 +62,11 @@ class AppPages {
       name: _Paths.SETTING,
       page: () => const SettingView(),
       binding: SettingBinding(),
+    ),
+    GetPage(
+      name: _Paths.WAITING,
+      page: () => const WaitingView(),
+      binding: WaitingBinding(),
     ),
   ];
 }
