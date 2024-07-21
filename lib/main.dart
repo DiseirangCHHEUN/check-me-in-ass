@@ -3,6 +3,7 @@ import 'package:check_me_in/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'app/modules/auth/auth_repository/auth_repository.dart';
 import 'app/routes/app_pages.dart';
@@ -23,6 +24,9 @@ Future<void> main() async {
       DeviceOrientation.portraitDown,
     ],
   );
+  // remove splash provide by flutter
+  FlutterNativeSplash.remove();
+  
   runApp(
     GetMaterialApp(
       theme: ThemeData(
