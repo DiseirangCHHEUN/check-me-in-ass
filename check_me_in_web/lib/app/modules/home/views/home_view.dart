@@ -1,9 +1,9 @@
-import 'package:check_me_in_web_ass/app/modules/dashboard/views/dashboard_view.dart';
-import 'package:check_me_in_web_ass/app/modules/employee/views/employee_view.dart';
-import 'package:check_me_in_web_ass/app/modules/home/models/home_menu.dart';
-import 'package:check_me_in_web_ass/app/modules/login/repository/auth_repository.dart';
-import 'package:check_me_in_web_ass/app/modules/management/views/management_view.dart';
-import 'package:check_me_in_web_ass/app/modules/setting/views/setting_view.dart';
+import '../../dashboard/views/dashboard_view.dart';
+import '../../management/views/management_view.dart';
+import '../../employee/views/employee_view.dart';
+import '../../setting/views/setting_view.dart';
+import '../../login/repository/auth_repository.dart';
+import '../../home/models/home_menu.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
