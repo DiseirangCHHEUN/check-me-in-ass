@@ -9,9 +9,9 @@ class SigninController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   final TextEditingController emailController =
-      TextEditingController(text: 'dzrang@gmail.com');
+      TextEditingController(text: 'admin123@gmail.com');
   final TextEditingController passwordController =
-      TextEditingController(text: 'dev123456');
+      TextEditingController(text: 'dev12345');
 
   RxBool isLoading = false.obs;
 

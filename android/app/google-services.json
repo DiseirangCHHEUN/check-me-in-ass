@@ -1,13 +1,32 @@
 {
   "project_info": {
-    "project_number": "224365014575",
-    "project_id": "check-me-in-ass",
-    "storage_bucket": "check-me-in-ass.appspot.com"
+    "project_number": "587738909180",
+    "project_id": "check-me-in-66fa7",
+    "storage_bucket": "check-me-in-66fa7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:224365014575:android:27fa407feebd5b2cb9a0da",
+        "mobilesdk_app_id": "1:587738909180:android:e8b85661bf40cfe25fca79",
+        "android_client_info": {
+          "package_name": "com.dis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLbsLjKKKdzo3j6N_uMExN8msjJGUcjBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587738909180:android:b751705ce4d40da05fca79",
         "android_client_info": {
           "package_name": "com.diseirang.check_me_in"
         }
@@ -15,7 +34,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBwg0Vi18D3goOqSSpFbhJj1GO56xe4Kno"
+          "current_key": "AIzaSyDLbsLjKKKdzo3j6N_uMExN8msjJGUcjBE"
         }
       ],
       "services": {
