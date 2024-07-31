@@ -43,53 +43,33 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      body: Padding(
+      body: ListView(
         padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset('assets/app_icons/152.png'),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              'Check Me In - Mobile',
-              style: GoogleFonts.anton(fontSize: 22),
-            ),
-            const SizedBox(height: 20),
-            // BodyItemCard(
-            //   itemTitle: '  Working!  ',
-            //   onCheckIn: () {},
-            //   onCheckOut: () {},
-            // ),
-            const BodyStatus(),
-            const SizedBox(
-              height: 20,
-            ),
-            const DateDisplay(),
-            const SizedBox(
-              height: 20,
-            ),
-            const SlideOption(),
-            // const SizedBox(height: 16),
-            // BodyItemCard(
-            //   itemTitle: '  Foods break!  ',
-            //   onCheckIn: () {},
-            //   onCheckOut: () {},
-            // ),
-            // const SizedBox(height: 16),
-            // Row(
-            //   children: [
-            //     BodyItemButton(
-            //       bgColor: const Color(0xFFFFF178),
-            //       fgColor: Colors.white,
-            //       title: "Ask Permission",
-            //       onPressed: () {},
-            //     ),
-            //   ],
-            // ),
-          ],
-        ),
+        children: [
+          Column(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset('assets/app_icons/152.png'),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Check Me In - Mobile',
+                style: GoogleFonts.anton(fontSize: 22),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          const BodyStatus(),
+          const SizedBox(
+            height: 20,
+          ),
+          const DateDisplay(),
+          const SizedBox(
+            height: 20,
+          ),
+          const SlideOption(),
+        ],
       ),
     );
   }
