@@ -120,7 +120,7 @@ class ProfileView extends GetView<ProfileController> {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    Text('7'),
+                                    Text('71'),
                                   ],
                                 ),
                                 SizedBox(
