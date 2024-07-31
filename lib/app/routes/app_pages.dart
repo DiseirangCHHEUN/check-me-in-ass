@@ -1,3 +1,4 @@
+import 'package:check_me_in/app/modules/dashboard/views/dashboard_view_v2.dart';
 import 'package:get/get.dart';
 
 import '../modules/ask_permission/bindings/ask_permission_binding.dart';
@@ -35,7 +36,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DASHBOARD,
-      page: () => const DashboardView(),
+      page: () => const DashboardViewV2(),
       binding: DashboardBinding(),
     ),
     GetPage(

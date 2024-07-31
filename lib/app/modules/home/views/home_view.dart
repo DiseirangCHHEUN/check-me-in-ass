@@ -1,5 +1,6 @@
-import 'package:check_me_in/app/modules/home/utils/body_item_button.dart';
-import 'package:check_me_in/app/modules/home/utils/body_item_card.dart';
+import 'package:check_me_in/app/modules/home/utils/body_status.dart';
+import 'package:check_me_in/app/modules/home/utils/date_display.dart';
+import 'package:check_me_in/app/modules/home/utils/slide_option.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,6 +9,7 @@ import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,28 +57,37 @@ class HomeView extends GetView<HomeController> {
               style: GoogleFonts.anton(fontSize: 22),
             ),
             const SizedBox(height: 20),
-            BodyItemCard(
-              itemTitle: '  Working!  ',
-              onCheckIn: () {},
-              onCheckOut: () {},
+            // BodyItemCard(
+            //   itemTitle: '  Working!  ',
+            //   onCheckIn: () {},
+            //   onCheckOut: () {},
+            // ),
+            const BodyStatus(),
+            const SizedBox(
+              height: 20,
             ),
-            const SizedBox(height: 16),
-            BodyItemCard(
-              itemTitle: '  Foods break!  ',
-              onCheckIn: () {},
-              onCheckOut: () {},
+            const DateDisplay(),
+            const SizedBox(
+              height: 20,
             ),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                BodyItemButton(
-                  bgColor: const Color(0xFFFFF178),
-                  fgColor: Colors.white,
-                  title: "Ask Permission",
-                  onPressed: () {},
-                ),
-              ],
-            ),
+            const SlideOption(),
+            // const SizedBox(height: 16),
+            // BodyItemCard(
+            //   itemTitle: '  Foods break!  ',
+            //   onCheckIn: () {},
+            //   onCheckOut: () {},
+            // ),
+            // const SizedBox(height: 16),
+            // Row(
+            //   children: [
+            //     BodyItemButton(
+            //       bgColor: const Color(0xFFFFF178),
+            //       fgColor: Colors.white,
+            //       title: "Ask Permission",
+            //       onPressed: () {},
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),
