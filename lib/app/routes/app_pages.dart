@@ -6,7 +6,6 @@ import '../modules/ask_permission/views/ask_permission_view.dart';
 import '../modules/auth/signin/bindings/signin_binding.dart';
 import '../modules/auth/signin/views/signin_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
-import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
