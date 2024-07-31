@@ -26,7 +26,7 @@ Future<void> main() async {
   );
   // remove splash provide by flutter
   FlutterNativeSplash.remove();
-  
+
   runApp(
     GetMaterialApp(
       theme: ThemeData(
