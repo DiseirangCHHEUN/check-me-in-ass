@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class DateDisplay extends StatelessWidget {
   const DateDisplay({super.key});
@@ -11,31 +12,34 @@ class DateDisplay extends StatelessWidget {
       child: Column(
         children: [
           Container(
-              alignment: Alignment.centerLeft,
-              child: Row(
-                children: [
-                  Text(
-                    '11',
-                    style: GoogleFonts.anton(color: Colors.red, fontSize: 25),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    'July 2024',
-                    style: GoogleFonts.gabarito(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w700),
-                  )
-                ],
-              )),
-          Container(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '08:00:12',
-                style: GoogleFonts.anton(color: Colors.grey, fontSize: 35),
-              )),
+            alignment: Alignment.centerLeft,
+            child: Row(
+              children: [
+                Text(
+                  DateTime.now().day.toString(),
+                  style: GoogleFonts.anton(color: Colors.red, fontSize: 25),
+                ),
+                Text(
+                  DateFormat(' MMMM yyyy').format(DateTime.now()),
+                  style: GoogleFonts.gabarito(
+                      color: Colors.black,
+                      fontSize: 27,
+                      fontWeight: FontWeight.w700),
+                )
+              ],
+            ),
+          ),
+          StreamBuilder(
+              stream: Stream.periodic(const Duration(seconds: 1)),
+              builder: (context, snapshot) {
+                return Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      DateFormat('hh:mm:ss a').format(DateTime.now()),
+                      style:
+                          GoogleFonts.anton(color: Colors.grey, fontSize: 35),
+                    ));
+              }),
         ],
       ),
     );
