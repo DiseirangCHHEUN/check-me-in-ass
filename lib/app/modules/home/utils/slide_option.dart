@@ -1,8 +1,6 @@
 import 'dart:async';
-import 'package:check_me_in/app/modules/auth/auth_repository/auth_repository.dart';
 import 'package:check_me_in/app/modules/home/controllers/home_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
