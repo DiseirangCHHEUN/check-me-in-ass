@@ -43,34 +43,38 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: [
-          Column(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset('assets/app_icons/152.png'),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Check Me In - Mobile',
-                style: GoogleFonts.anton(fontSize: 22),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          const BodyStatus(),
-          const SizedBox(
-            height: 20,
-          ),
-          const DateDisplay(),
-          const SizedBox(
-            height: 20,
-          ),
-          const SlideOption(),
-        ],
-      ),
+      body: GetBuilder(
+          init: HomeController(),
+          builder: (_) {
+            return ListView(
+              padding: const EdgeInsets.all(20),
+              children: [
+                Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset('assets/app_icons/152.png'),
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      'Check Me In - Mobile',
+                      style: GoogleFonts.anton(fontSize: 22),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                BodyStatus(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const DateDisplay(),
+                const SizedBox(
+                  height: 20,
+                ),
+                SlideOption(),
+              ],
+            );
+          }),
     );
   }
 }
