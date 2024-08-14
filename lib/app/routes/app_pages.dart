@@ -1,12 +1,11 @@
+import 'package:check_me_in/app/modules/auth/signin/views/sign_in_view.dart';
 import 'package:check_me_in/app/modules/dashboard/views/dashboard_view_v2.dart';
 import 'package:get/get.dart';
 
 import '../modules/ask_permission/bindings/ask_permission_binding.dart';
 import '../modules/ask_permission/views/ask_permission_view.dart';
 import '../modules/auth/signin/bindings/signin_binding.dart';
-import '../modules/auth/signin/views/signin_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
-import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -56,7 +55,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SIGNIN,
-      page: () => const SigninView(),
+      page: () => const SignInView(),
       binding: SigninBinding(),
     ),
     GetPage(

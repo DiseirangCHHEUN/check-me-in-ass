@@ -26,7 +26,7 @@ Future<void> main() async {
   );
   // remove splash provide by flutter
   FlutterNativeSplash.remove();
-  
+
   runApp(
     GetMaterialApp(
       theme: ThemeData(
@@ -38,7 +38,7 @@ Future<void> main() async {
       ),
       debugShowCheckedModeBanner: false,
       title: "Application",
-      initialRoute: AppPages.INITIAL,
+      initialRoute: '/signin',
       getPages: AppPages.routes,
     ),
   );
