@@ -67,7 +67,6 @@ class SignInView extends GetView<SigninController> {
                                 String id = controller.idController.text.trim();
                                 String password =
                                     controller.passwordController.text.trim();
-
                                 if (id.isEmpty) {
                                   Get.snackbar('Failed', 'ID is still empty!');
                                 } else if (password.isEmpty) {
@@ -79,27 +78,28 @@ class SignInView extends GetView<SigninController> {
                                       .collection('test')
                                       .where('id', isEqualTo: id)
                                       .get();
+                                  print(snap.docs[0]['id']);
 
-                                  try {
-                                    // DocumentSnapshot userdocs = snap.docs.first;
-                                    if (snap.docs[0]['password'] == password) {
-                                      Get.to(const HomeView());
-                                    } else {
-                                      Get.snackbar(
-                                          'Failed', 'Password is incorrect');
-                                    }
-                                  } catch (e) {
-                                    controller.setError(e.toString());
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Obx(
-                                          () {
-                                            return Text(controller.error.value);
-                                          },
-                                        ),
-                                      ),
-                                    );
-                                  }
+                                  // try {
+                                  //   // DocumentSnapshot userdocs = snap.docs.first;
+                                  //   if (snap.docs[0]['password'] == password) {
+                                  //     Get.to(const HomeView());
+                                  //   } else {
+                                  //     Get.snackbar(
+                                  //         'Failed', 'Password is incorrect');
+                                  //   }
+                                  // } catch (e) {
+                                  //   controller.setError(e.toString());
+                                  //   ScaffoldMessenger.of(context).showSnackBar(
+                                  //     SnackBar(
+                                  //       content: Obx(
+                                  //         () {
+                                  //           return Text(controller.error.value);
+                                  //         },
+                                  //       ),
+                                  //     ),
+                                  //   );
+                                  // }
                                 }
                               },
                               buttonText: 'sign in'),

@@ -1,4 +1,5 @@
 import 'package:check_me_in/app/modules/auth/signin/views/sign_in_view.dart';
+import 'package:check_me_in/app/modules/auth/signin/views/signin_view.dart';
 import 'package:check_me_in/app/modules/dashboard/views/dashboard_view_v2.dart';
 import 'package:get/get.dart';
 
@@ -24,8 +25,8 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  // static const INITIAL = Routes.HOME;
-  static const INITIAL = Routes.WAITING;
+  static const INITIAL = Routes.HOME;
+  // static const INITIAL = Routes.WAITING;
 
   static final routes = [
     GetPage(
@@ -55,7 +56,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SIGNIN,
-      page: () => const SignInView(),
+      page: () => const SigninView(),
       binding: SigninBinding(),
     ),
     GetPage(

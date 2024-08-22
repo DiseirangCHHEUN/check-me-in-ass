@@ -38,7 +38,7 @@ Future<void> main() async {
       ),
       debugShowCheckedModeBanner: false,
       title: "Application",
-      initialRoute: '/signin',
+      initialRoute: '/home',
       getPages: AppPages.routes,
     ),
   );

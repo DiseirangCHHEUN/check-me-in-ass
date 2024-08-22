@@ -9,9 +9,9 @@ class SigninController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   final TextEditingController idController =
-      TextEditingController(text: 'CM1001');
+      TextEditingController(text: 'visal@gmail.com');
   final TextEditingController passwordController =
-      TextEditingController(text: '12345678');
+      TextEditingController(text: '123456');
 
   RxBool isLoading = false.obs;
   var error = "".obs;
