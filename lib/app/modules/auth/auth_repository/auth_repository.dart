@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
 import '../../../routes/app_pages.dart';
 import '../exceptions/authentication_failure.dart';
 
@@ -26,7 +27,7 @@ class AuthRepository extends GetxController {
 
   _setInitialScreen(User? user) {
     user == null
-        ? Get.offAllNamed(Routes.SIGNIN)
+        ? Get.offAllNamed(Routes.HOME)
         : {
             Get.offAllNamed(Routes.DASHBOARD),
             // profileController.fetchUserProfile(),

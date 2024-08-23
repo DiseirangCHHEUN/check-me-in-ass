@@ -7,21 +7,23 @@ class SigninController extends GetxController {
   static SigninController get instance => Get.find();
 
   final formKey = GlobalKey<FormState>();
-
-  final TextEditingController emailController =
-      TextEditingController(text: 'admin123@gmail.com');
+ 
+  final TextEditingController idController =
+      TextEditingController(text: 'visal@gmail.com');
   final TextEditingController passwordController =
-      TextEditingController(text: 'dev12345');
+      TextEditingController(text: '123456');
+ 
 
   RxBool isLoading = false.obs;
+  var error = "".obs;
 
   void loginUser() async {
-    var email = emailController.text;
+    var id = idController.text;
     var password = passwordController.text;
     try {
       isLoading(true);
       await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
+          .signInWithEmailAndPassword(email: id, password: password);
       Get.snackbar('Successful!', 'Sign in successfully.');
       isLoading(false);
     } on FirebaseAuthException catch (e) {
@@ -32,6 +34,15 @@ class SigninController extends GetxController {
       const ex = AuthenticationFailure();
       Get.snackbar(ex.title, ex.msg);
       isLoading(false);
+    }
+  }
+
+  void setError(String e) {
+    if (e.contains(
+        "RangeError (index): Invalid value: Valid value range is empty")) {
+      error.value = "Employee id does not exist";
+    } else {
+      error.value = "Error occurred";
     }
   }
 }

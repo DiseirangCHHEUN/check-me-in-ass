@@ -1,12 +1,14 @@
 import 'package:check_me_in/app/components/auth_button.dart';
 import 'package:check_me_in/app/components/auth_header.dart';
 import 'package:check_me_in/app/components/auth_textfield.dart';
+import 'package:check_me_in/app/modules/home/views/home_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/signin_controller.dart';
 
-class SigninView extends GetView<SigninController> {
-  const SigninView({
+class SignInView extends GetView<SigninController> {
+  const SignInView({
     super.key,
   });
 
@@ -32,11 +34,11 @@ class SigninView extends GetView<SigninController> {
                       icon: Icons.email_rounded,
                       onSaved: (p0) {},
                       controller: controller.idController,
-                      label: 'Email',
+                      label: 'Id',
                       keyboardType: TextInputType.emailAddress,
                       validator: (p0) {
                         if (p0!.isEmpty) {
-                          return 'Email is empty.';
+                          return 'Id is empty.';
                         }
                         return null;
                       },
@@ -60,10 +62,44 @@ class SigninView extends GetView<SigninController> {
                       children: [
                         Expanded(
                           child: AuthButton(
-                              onPress: () {
-                                if (controller.formKey.currentState!
-                                    .validate()) {
-                                  controller.loginUser();
+                              onPress: () async {
+                                FocusScope.of(context).unfocus();
+                                String id = controller.idController.text.trim();
+                                String password =
+                                    controller.passwordController.text.trim();
+                                if (id.isEmpty) {
+                                  Get.snackbar('Failed', 'ID is still empty!');
+                                } else if (password.isEmpty) {
+                                  Get.snackbar(
+                                      'Failed', 'Password is still empty!');
+                                } else {
+                                  QuerySnapshot snap = await FirebaseFirestore
+                                      .instance
+                                      .collection('test')
+                                      .where('id', isEqualTo: id)
+                                      .get();
+                                  print(snap.docs[0]['id']);
+
+                                  // try {
+                                  //   // DocumentSnapshot userdocs = snap.docs.first;
+                                  //   if (snap.docs[0]['password'] == password) {
+                                  //     Get.to(const HomeView());
+                                  //   } else {
+                                  //     Get.snackbar(
+                                  //         'Failed', 'Password is incorrect');
+                                  //   }
+                                  // } catch (e) {
+                                  //   controller.setError(e.toString());
+                                  //   ScaffoldMessenger.of(context).showSnackBar(
+                                  //     SnackBar(
+                                  //       content: Obx(
+                                  //         () {
+                                  //           return Text(controller.error.value);
+                                  //         },
+                                  //       ),
+                                  //     ),
+                                  //   );
+                                  // }
                                 }
                               },
                               buttonText: 'sign in'),
