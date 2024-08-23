@@ -14,11 +14,11 @@ class DashboardViewV2 extends GetView<DashboardController> {
           bottomNavigationBar: AnimatedNotchBottomBar(
             /// Provide NotchBottomBarController
             notchBottomBarController: controller.notchController,
-            color: Colors.white,
+            // color: Colors.white,
             showLabel: true,
             textOverflow: TextOverflow.visible,
             maxLine: 1,
-            shadowElevation: 5,
+            // shadowElevation: 5,
             kBottomRadius: 28.0,
 
             // notchShader: const SweepGradient(
@@ -27,9 +27,9 @@ class DashboardViewV2 extends GetView<DashboardController> {
             //   colors: [Colors.red, Colors.green, Colors.orange],
             //   tileMode: TileMode.mirror,
             // ).createShader(Rect.fromCircle(center: Offset.zero, radius: 8.0)),
-            notchColor: Colors.white,
+            // notchColor: Colors.white,
 
-            /// restart app if you change removeMargins
+            /// restart app if you change or remove Margins
             removeMargins: false,
             bottomBarWidth: 500,
             showShadow: false,
@@ -50,8 +50,10 @@ class DashboardViewV2 extends GetView<DashboardController> {
                 ),
               ),
               BottomBarItem(
-                inActiveItem:
-                    Icon(Icons.person_rounded, color: Colors.blueGrey),
+                inActiveItem: Icon(
+                  Icons.person_rounded,
+                  color: Colors.blueGrey,
+                ),
                 activeItem: Icon(
                   Icons.person_rounded,
                   color: Colors.amber,

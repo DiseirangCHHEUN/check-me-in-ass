@@ -1,7 +1,9 @@
+import 'package:check_me_in/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BodyStatus extends StatelessWidget {
+class BodyStatus extends GetView<HomeController> {
   const BodyStatus({super.key});
 
   @override
@@ -20,48 +22,52 @@ class BodyStatus extends StatelessWidget {
           ),
         ],
       ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+      child: GetBuilder<HomeController>(
+          init: HomeController(),
+          builder: (_) {
+            return Row(
               children: [
-                Text(
-                  'Check In',
-                  style: GoogleFonts.abel(
-                      fontSize: 30,
-                      color: Colors.green,
-                      fontWeight: FontWeight.w900),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Check In',
+                        style: GoogleFonts.abel(
+                            fontSize: 30,
+                            color: Colors.green,
+                            fontWeight: FontWeight.w900),
+                      ),
+                      Text(
+                        controller.checkIn,
+                        style: GoogleFonts.tomorrow(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
-                Text(
-                  '9:22',
-                  style: GoogleFonts.tomorrow(
-                      fontSize: 30, fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
-          ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Check Out',
-                  style: GoogleFonts.abel(
-                      fontSize: 30,
-                      color: Colors.red,
-                      fontWeight: FontWeight.w900),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Check Out',
+                        style: GoogleFonts.abel(
+                            fontSize: 30,
+                            color: Colors.red,
+                            fontWeight: FontWeight.w900),
+                      ),
+                      Text(
+                        controller.checkOut,
+                        style: GoogleFonts.tomorrow(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
-                Text(
-                  '9:48',
-                  style: GoogleFonts.tomorrow(
-                      fontSize: 30, fontWeight: FontWeight.bold),
-                )
               ],
-            ),
-          ),
-        ],
-      ),
+            );
+          }),
     );
   }
 }

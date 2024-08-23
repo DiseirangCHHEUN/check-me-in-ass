@@ -68,37 +68,77 @@ class ProfileView extends GetView<ProfileController> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: const Color(0xFFBDFFBF),
-                          ),
-                          child: const Column(
-                            children: [
-                              Text(
-                                '10',
-                                style: TextStyle(
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF003A1E),
-                                ),
+                        Column(
+                          children: [
+                            const Text(
+                              'Available Leaves',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
                               ),
-                              Text(
-                                'DAYS',
-                                style: TextStyle(
-                                  color: Color(0xFF003A1E),
-                                ),
+                            ),
+                            const SizedBox(height: 10),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 10,
                               ),
-                            ],
-                          ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: const Color(0xFFBDFFBF),
+                              ),
+                              child: const Row(
+                                children: [
+                                  Text(
+                                    '10',
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xFF003A1E),
+                                    ),
+                                  ),
+                                  Text(
+                                    '  DAYS',
+                                    style: TextStyle(
+                                      color: Color(0xFF003A1E),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         Column(
                           children: [
-                            const Text('Available Leaves'),
+                            const Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Text(
+                                      'AL',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text('71'),
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      'SL',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text('3'),
+                                  ],
+                                ),
+                              ],
+                            ),
                             FilledButton(
                               style: FilledButton.styleFrom(
                                 backgroundColor: Colors.white,
@@ -113,7 +153,7 @@ class ProfileView extends GetView<ProfileController> {
                               ),
                               onPressed: () {},
                               child: const Text(
-                                '   Apply   ',
+                                'Request',
                               ),
                             ),
                           ],
@@ -128,7 +168,7 @@ class ProfileView extends GetView<ProfileController> {
             Row(
               children: [
                 Text(
-                  'Check In/Out History  ',
+                  'Check In/Out Transaction  ',
                   style: GoogleFonts.anton(
                     fontSize: 20,
                   ),

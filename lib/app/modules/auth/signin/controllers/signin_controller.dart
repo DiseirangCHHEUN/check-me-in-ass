@@ -7,11 +7,12 @@ class SigninController extends GetxController {
   static SigninController get instance => Get.find();
 
   final formKey = GlobalKey<FormState>();
-
+ 
   final TextEditingController idController =
       TextEditingController(text: 'visal@gmail.com');
   final TextEditingController passwordController =
       TextEditingController(text: '123456');
+ 
 
   RxBool isLoading = false.obs;
   var error = "".obs;

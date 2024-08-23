@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -50,19 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBwg0Vi18D3goOqSSpFbhJj1GO56xe4Kno',
-    appId: '1:224365014575:android:27fa407feebd5b2cb9a0da',
-    messagingSenderId: '224365014575',
-    projectId: 'check-me-in-ass',
-    storageBucket: 'check-me-in-ass.appspot.com',
+    apiKey: 'AIzaSyDLbsLjKKKdzo3j6N_uMExN8msjJGUcjBE',
+    appId: '1:587738909180:android:b751705ce4d40da05fca79',
+    messagingSenderId: '587738909180',
+    projectId: 'check-me-in-66fa7',
+    storageBucket: 'check-me-in-66fa7.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDoI5M_s7io8104MonPRpfni5ZpjHPM2kg',
-    appId: '1:224365014575:ios:a5284175b99e0a20b9a0da',
-    messagingSenderId: '224365014575',
-    projectId: 'check-me-in-ass',
-    storageBucket: 'check-me-in-ass.appspot.com',
+    apiKey: 'AIzaSyAfyZGL5_Oj3VCzaF6sga6vrtYGB1WfVy0',
+    appId: '1:587738909180:ios:2bc130886424e3645fca79',
+    messagingSenderId: '587738909180',
+    projectId: 'check-me-in-66fa7',
+    storageBucket: 'check-me-in-66fa7.appspot.com',
     iosBundleId: 'com.diseirang.checkMeIn',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBMFz3CSIR2JYimZmcGCvvX2RtIXZnN2q4',
+    appId: '1:587738909180:web:bb19c4c732f7d9ff5fca79',
+    messagingSenderId: '587738909180',
+    projectId: 'check-me-in-66fa7',
+    authDomain: 'check-me-in-66fa7.firebaseapp.com',
+    storageBucket: 'check-me-in-66fa7.appspot.com',
+  );
+
 }
