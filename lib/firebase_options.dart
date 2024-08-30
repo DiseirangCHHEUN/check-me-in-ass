@@ -65,7 +65,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBMFz3CSIR2JYimZmcGCvvX2RtIXZnN2q4',
-    appId: '1:587738909180:web:bb19c4c732f7d9ff5fca79',
+    appId: '1:587738909180:web:c41805d1ddba03155fca79',
     messagingSenderId: '587738909180',
     projectId: 'check-me-in-66fa7',
     authDomain: 'check-me-in-66fa7.firebaseapp.com',

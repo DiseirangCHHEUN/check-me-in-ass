@@ -8,6 +8,9 @@ import '../exceptions/authentication_failure.dart';
 class AuthRepository extends GetxController {
   static AuthRepository get instance => Get.put(AuthRepository());
 
+  // TextEditingController emailController = TextEditingController();
+  // TextEditingController passwordController = TextEditingController();
+
   final _firebaseAuth = FirebaseAuth.instance;
   final _googleSignIn = GoogleSignIn();
   final _firestore = FirebaseFirestore.instance;
@@ -105,4 +108,53 @@ class AuthRepository extends GetxController {
       // print(ex);
     }
   }
+
+  // Future<void> login() async {
+  //   String username = emailController.text;
+  //   String password = passwordController.text;
+
+  //   if (username.isEmpty || password.isEmpty) {
+  //     Get.snackbar('Invalid!', 'Please enter both username and password.');
+  //     return;
+  //   }
+
+  //   try {
+  //     isLoading(true);
+  //     // Fetch the document from Firestore where the username matches
+  //     QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+  //         .collection('user')
+  //         .where('id', isEqualTo: username)
+  //         .limit(1)
+  //         .get();
+
+  //     if (querySnapshot.docs.isEmpty) {
+  //       Get.snackbar(
+  //           'Invalid credentail!', 'No user found with that username.');
+
+  //       return;
+  //     }
+
+  //     // Assuming usernames are unique, there will be only one document
+  //     DocumentSnapshot userDoc = querySnapshot.docs.first;
+
+  //     // Check if the password matches
+  //     if (userDoc['password'] == password) {
+  //       Get.snackbar('Successful!', 'Sign in successfully.');
+  //       // Navigate to the next page, e.g., HomePage
+  //       Get.offAllNamed('/dashboard');
+  //     } else {
+  //       Get.snackbar('Invalid!', 'Incorrect password.');
+  //     }
+  //   } on FirebaseAuthException catch (e) {
+  //     final ex = AuthenticationFailure.code(e.code);
+  //     Get.snackbar(ex.title, ex.msg);
+  //   } catch (e) {
+  //     Get.snackbar(
+  //         'Invalid!', 'An error occurred during login. Please try again.');
+  //     const ex = AuthenticationFailure();
+  //     Get.snackbar(ex.title, ex.msg);
+  //   } finally {
+  //     isLoading(false);
+  //   }
+  // }
 }

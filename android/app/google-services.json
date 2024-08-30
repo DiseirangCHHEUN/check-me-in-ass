@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "587738909180",
-    "project_id": "check-me-in-66fa7",
-    "storage_bucket": "check-me-in-66fa7.appspot.com"
+    "project_number": "988111013121",
+    "project_id": "check-me-in-mobile",
+    "storage_bucket": "check-me-in-mobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:587738909180:android:e8b85661bf40cfe25fca79",
+        "mobilesdk_app_id": "1:988111013121:android:ab2b473a5631f195ec0700",
         "android_client_info": {
-          "package_name": "com.dis"
+          "package_name": "com.diseirang.check_me_in"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDLbsLjKKKdzo3j6N_uMExN8msjJGUcjBE"
+          "current_key": "AIzaSyCPCnEcA-EEsLrSoMTKsDkMIvEWX9J400k"
         }
       ],
       "services": {
@@ -26,15 +26,15 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:587738909180:android:b751705ce4d40da05fca79",
+        "mobilesdk_app_id": "1:988111013121:android:8ffb0b24f00288ccec0700",
         "android_client_info": {
-          "package_name": "com.diseirang.check_me_in"
+          "package_name": "com.diseirang.check_me_in_mobile"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDLbsLjKKKdzo3j6N_uMExN8msjJGUcjBE"
+          "current_key": "AIzaSyCPCnEcA-EEsLrSoMTKsDkMIvEWX9J400k"
         }
       ],
       "services": {
